@@ -105,11 +105,20 @@ p#bio {
     bottom: 100px;
 
     border-radius: 10px;
+    border-style: none;
     background-color: rgb(226, 177, 136);
+
+    box-shadow: 0 5px 0 0 rgb(172, 135, 105);
 
     /* position: relative;
     bottom: 30px;
     left: ; */
+}
+
+#followb:active {
+    box-shadow: 0 -3px 0 0 rgb(139, 109, 84);
+    scale: 99%;
+    background-color: rgb(172, 135, 105);
 }
 
 #followcount {
@@ -154,10 +163,46 @@ a:visited{
     width: var(--content-width);
     height: 150px;
     overflow: hidden;
+    scroll-behavior: smooth;
     
     display: inline-flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+
+    anchor-name: --featured-anchor;
+}
+
+#featured::scroll-button(*) {
+    position: absolute;
+    position-anchor: --featured-anchor;
+    background: none;
+
+    border-radius: 50%;
+    border-style: none;
+    padding: 0px;
+    margin-top: 50px;
+    text-align: center;
+    
+    max-width: 24px;
+    max-height: 24px;
+    rotate: 180deg;
+    box-shadow: 0px -5px rgb(204, 160, 125);
+    /* background-color: rgb(226, 177, 136); */
+    
+    /* background-color: white; */
+    
+}
+
+#featured::scroll-button(left) {
+     right: calc(anchor(left) - 45px);
+     content: url(icons/previous2.png);
+}
+
+#featured::scroll-button(right) {
+    left: calc(anchor(right) - 45px);
+    
+    content: url(icons/previous.png);
+
 }
 
 #featureditem {
@@ -165,32 +210,32 @@ a:visited{
     flex-direction: column;
     align-items: center;
 
+    margin-left: 30px;
+    margin-right: 30px;
+
+    b {
+        position: relative;
+        left: 2px;
+    }
+
     img {
-        transition: 0.3s;
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        background-color: rgb(226, 177, 136);
-        padding: 5px;
-        box-shadow: inset 0px 0px 5px black;
+        /* padding: 5px; */
+        box-shadow: 3px 5px  rgb(204, 160, 125);
         
         margin-bottom: 5px;
     }
 
-    img:hover {
-        transition: 0.3s;
-        padding: 10px;
-        width: 70px;
-        height: 70px;
-        box-shadow: inset 0px 0px 10px black;
-    }
+    /* img:hover {
+        transform: translateX(-5px) translateY(-5px);
+        box-shadow: 6px 10px  rgb(204, 160, 125);
+    } */
 
     img:active {
-        transition: 0.3s;
-        padding: 0px;
-        width: 90px;
-        height: 90px;
-
+        transform: translateX(1px) translateY(2px);
+        box-shadow: -3px -5px  rgb(226, 177, 136);
     }   
 }
 
@@ -213,19 +258,21 @@ a:visited{
     display: grid;
     grid-template-columns: 300px 300px 300px;
     gap: 30px;
-    
 
     img {
-        transition: 0.3s;
         width: 300px;
         height: 450px;
         border-radius: 20px;
-        box-shadow: 0px 0px rgb(226, 177, 136);
+        box-shadow: 2px 10px 0 0 rgb(172, 135, 105);
     }
 
-    img:hover {
-        transition: 0.3s;
-        transform: translatex(-15px) translatey(-15px);
-        box-shadow: 15px 15px rgb(226, 177, 136);
-    }
+    img:active {
+        transform: translateX(4px) translateY(12px);
+        box-shadow: -2px -10px rgb(167, 130, 100);
+        scale: 99%;
+    }  
+}
+
+#feedpopover {
+    background-color: pink;
 }
