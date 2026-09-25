@@ -108,7 +108,7 @@ p#bio {
     border-style: none;
     background-color: rgb(226, 177, 136);
 
-    box-shadow: 0 5px 0 0 rgb(172, 135, 105);
+    box-shadow: 2px 5px 0 0 rgb(172, 135, 105);
 
     /* position: relative;
     bottom: 30px;
@@ -116,9 +116,9 @@ p#bio {
 }
 
 #followb:active {
-    box-shadow: 0 -3px 0 0 rgb(139, 109, 84);
+    box-shadow:  -2px -3px rgb(78, 61, 48);
     scale: 99%;
-    background-color: rgb(172, 135, 105);
+    background-color: rgb(201, 159, 124);
 }
 
 #followcount {
@@ -138,6 +138,7 @@ p#bio {
 
 a {
     text-decoration: none;
+    color: rgb(226, 177, 136);
 }
 
 a:visited{
@@ -150,7 +151,8 @@ a:visited{
     justify-content: center;
     margin-right: 10px;
 
-    color: #00cadb;
+    /* color: #00cadb; */
+    color: rgb(226, 177, 136);
 
     svg {
         width: 20px;
@@ -260,6 +262,8 @@ a:visited{
     gap: 30px;
 
     img {
+        position: relative;
+        z-index: 1;
         width: 300px;
         height: 450px;
         border-radius: 20px;
@@ -271,6 +275,13 @@ a:visited{
         box-shadow: -2px -10px rgb(167, 130, 100);
         scale: 99%;
     }  
+}
+
+#popoverbutton {
+    position: relative;
+    z-index: 2;
+    background-color: none;
+    border-color: none;
 }
 
 #feedpopover {
